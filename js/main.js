@@ -16,6 +16,6 @@ var createGrid = function(rows, cols) {
 
 var boxHover = function() {
 	$('.grid-box').hover(function() {
-		$(this).slideToggle();
+		$(this).css({'background-color': '#009933'})
 	});
 };
