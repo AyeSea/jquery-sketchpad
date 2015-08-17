@@ -8,16 +8,22 @@
 </head>
 
 <body>
+	
+	<section id="sketchpad-wrapper">
 
 	<!-- Grid Container -->
-	<div class="container">
-		<button class="header-button" onclick="resetGrid()">Reset SketchPad</button>
-		<button class="header-button" onclick="randomizeColors()">Randomize Colors</button>
-	</div>
-
-	<section id="grid-container">
+		<section id="grid-container">
+		</section>
+		
+		<!-- Grid Buttons -->
+		<div class="container">
+			<button class="grid-button" onclick="selectColor()">Select Color</button>
+			<button class="grid-button" onclick="randomizeColors()">Randomize Colors</button>
+			<button class="grid-button" onclick="removeGridOutline()">Remove Grid Outline</button>
+			<button class="grid-button" onclick="resetGrid()">Reset SketchPad</button>
+		</div>
+	
 	</section>
-
 
 	<!-- Script References -->
 	<script src="js/jquery-1.11.3.min.js"></script>

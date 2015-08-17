@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	createGrid(5, 5);
+	createGrid(25, 25);
 	boxHover();
 });
 
 function createGrid(rows, cols) {
-	var width = (900 - cols * 2) / cols + 'px';
+	var width = (800 - cols * 2) / cols + 'px';
 	var height = (600 - rows * 2) / rows + 'px';
 
 	for (var i = 0; i < rows * cols; i++) {
@@ -44,4 +44,19 @@ function randomizeColors() {
 		$(this).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
 
 	});
+};
+
+function selectColor() {
+	var red = prompt("RGB - Select a value from 0-255 for RED:");
+	var green = prompt("RGB - Select a value from 0-255 for GREEN:");
+	var blue = prompt("RGB - Select a value from 0-255 for BLUE:");
+
+	$('.grid-box').hover(function() {
+		$(this).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
+	});
+
+};
+
+function removeGridOutline() {
+	$('.grid-box').css({'border-color': 'transparent'});
 };

@@ -1,21 +1,41 @@
-.container {
+$grid-background-color: #888;
+
+#sketchpad-wrapper {
 	width: 900px;
 	margin: 75px auto;
+	border: 1px solid #e5e5e5;
+	background-color: #ff4d4d;
+	border-radius: 10px;
+}
+
+.container {
+	width: 800px;
+	margin: 50px auto;
 	padding: 0;
 }
 
-.header-button {
+.grid-button {
+	color: #fff;
+	background-color: #888;
+	padding: 10px 15px;
+	border-radius: 5px;
+	margin-left: 32px;
+	transition: all 0.3s ease;
 
+	&:hover {
+		color: #888;
+		background-color: #fff;
+	}
 }
 
 #grid-container {
   @extend .container;
   height: 600px;
-  background-color: #888;
+  background-color: $grid-background-color;
 
   .grid-box {
   	float: left;
-  	margin: 1px;
+  	border: 1px solid $grid-background-color;
 		background-color: #e5e5e5;
   }
 
