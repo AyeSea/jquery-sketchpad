@@ -1,9 +1,11 @@
-#grid-container {
+.container, #grid-container {
   width: 900px;
-  height: 600px;
-  background-color: #888;
   margin: 75px auto;
   padding: 0; }
+
+#grid-container {
+  height: 600px;
+  background-color: #888; }
   #grid-container .grid-box {
     float: left;
     margin: 1px;

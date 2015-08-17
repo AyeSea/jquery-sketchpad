@@ -1,14 +1,23 @@
+.container {
+	width: 900px;
+	margin: 75px auto;
+	padding: 0;
+}
+
+.header-button {
+
+}
+
 #grid-container {
-  width: 900px;
+  @extend .container;
   height: 600px;
   background-color: #888;
-  margin: 75px auto;
-  padding: 0;
 
   .grid-box {
   	float: left;
   	margin: 1px;
 		background-color: #e5e5e5;
   }
+
 }
 

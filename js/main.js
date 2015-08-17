@@ -3,7 +3,7 @@ $(document).ready(function() {
 	boxHover();
 });
 
-var createGrid = function(rows, cols) {
+function createGrid(rows, cols) {
 	var width = (900 - cols * 2) / cols + 'px';
 	var height = (600 - rows * 2) / rows + 'px';
 
@@ -11,11 +11,25 @@ var createGrid = function(rows, cols) {
 		$('#grid-container').append('<div></div>');
 	};
 
-	$('div').css({height: height, width: width}).addClass('grid-box');
+	$('#grid-container').children('div').css({height: height, width: width}).addClass('grid-box');
 };
 
-var boxHover = function() {
+function boxHover() {
 	$('.grid-box').hover(function() {
 		$(this).css({'background-color': '#009933'})
 	});
+};
+
+function resetGrid() {
+	var response = confirm("Are you sure you want to reset the grid?");
+	
+	if (response === true) {
+		$('.grid-box').remove();
+
+		var rows = prompt("Enter the new number of rows:");
+		var cols = prompt("Enter the new number of columns:");
+
+		createGrid(rows, cols);
+		boxHover();
+	};
 };
