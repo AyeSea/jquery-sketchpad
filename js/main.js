@@ -33,3 +33,15 @@ function resetGrid() {
 		boxHover();
 	};
 };
+
+function randomizeColors() {
+	$('.grid-box').hover(function() {
+
+		var red = Math.ceil(Math.random() * 255);
+		var green = Math.ceil(Math.random() * 255);
+		var blue = Math.ceil(Math.random() * 255);
+
+		$(this).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
+
+	});
+};
