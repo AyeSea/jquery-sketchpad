@@ -3,13 +3,19 @@ var colorSelection = 'default';
 var color = 'rgb(125, 125, 125)';
 
 $(document).ready(function() {
+	setupGrid(25, 25);
+});
 
-	createGrid(25, 25);
+function setupGrid (rows, cols) {
+  mouseIsDown = false;
+	colorSelection = 'default';
+	color = 'rgb(125, 125, 125)';
+
+	createGrid(rows, cols);
 	boxHover();
 	startDrawing();
 	finishDrawing();
-
-});
+}
 
 function createGrid(rows, cols) {
 	var width = (800 - cols * 2) / cols + 'px';
@@ -63,10 +69,7 @@ function resetGrid() {
 		var rows = prompt("Enter the new number of rows:");
 		var cols = prompt("Enter the new number of columns:");
 
-		createGrid(rows, cols);
-		boxHover();
-		startDrawing();
-		finishDrawing();
+		setupGrid(rows, cols);
 	};
 };
 
