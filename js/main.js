@@ -65,6 +65,8 @@ function resetGrid() {
 
 		createGrid(rows, cols);
 		boxHover();
+		startDrawing();
+		finishDrawing();
 	};
 };
 
