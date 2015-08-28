@@ -81,7 +81,7 @@ function randomizeColors() {
 };
 
 function selectColor() {
-
+		colorSelection = 'userColor';
 		var red = prompt("RGB - Select a value from 0-255 for RED:");
 		var green = prompt("RGB - Select a value from 0-255 for GREEN:");
 		var blue = prompt("RGB - Select a value from 0-255 for BLUE:");
