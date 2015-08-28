@@ -92,6 +92,13 @@ function selectColor() {
 		color = 'rgb(' + red + ',' + green + ',' + blue + ')';
 };
 
-function removeGridOutline() {
-	$('.grid-box').css({'border-color': 'transparent'});
+function toggleGridOutline() {
+
+	if ( $('.grid-box').css('border-color') === 'rgb(136, 136, 136)' ) {
+		$('.grid-box').css({'border-color': 'transparent'});
+	}
+
+	else {
+		$('.grid-box').css({'border-color': 'rgb(136, 136, 136)'});
+	};
 };
