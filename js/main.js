@@ -1,6 +1,14 @@
+var mouseIsDown = false;
+var colorSelection = 'default';
+var color = 'rgb(125, 125, 125)';
+
 $(document).ready(function() {
+
 	createGrid(25, 25);
 	boxHover();
+	startDrawing();
+	finishDrawing();
+
 });
 
 function createGrid(rows, cols) {
@@ -16,7 +24,33 @@ function createGrid(rows, cols) {
 
 function boxHover() {
 	$('.grid-box').hover(function() {
-		$(this).css({'background-color': '#009933'})
+
+		if (mouseIsDown === true) {
+
+			if (colorSelection === 'default' || colorSelection === 'userColor') {
+				$(this).css({'background-color': color});
+			}
+
+			else if (colorSelection === 'random') {
+				$(this).css({'background-color': randomizeColors()});
+			};
+		};
+
+
+	});
+};
+
+
+function startDrawing() {
+	$('.grid-box').mousedown(function() {
+
+		mouseIsDown = true;
+	});
+};
+
+function finishDrawing() {
+	$('.grid-box').mouseup(function() {
+		mouseIsDown = false;
 	});
 };
 
@@ -35,26 +69,22 @@ function resetGrid() {
 };
 
 function randomizeColors() {
-	$('.grid-box').hover(function() {
+		colorSelection = 'random';
 
 		var red = Math.ceil(Math.random() * 255);
 		var green = Math.ceil(Math.random() * 255);
 		var blue = Math.ceil(Math.random() * 255);
 
-		$(this).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
-
-	});
+		return 'rgb(' + red + ',' + green + ',' + blue + ')';
 };
 
 function selectColor() {
-	var red = prompt("RGB - Select a value from 0-255 for RED:");
-	var green = prompt("RGB - Select a value from 0-255 for GREEN:");
-	var blue = prompt("RGB - Select a value from 0-255 for BLUE:");
 
-	$('.grid-box').hover(function() {
-		$(this).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
-	});
+		var red = prompt("RGB - Select a value from 0-255 for RED:");
+		var green = prompt("RGB - Select a value from 0-255 for GREEN:");
+		var blue = prompt("RGB - Select a value from 0-255 for BLUE:");
 
+		color = 'rgb(' + red + ',' + green + ',' + blue + ')';
 };
 
 function removeGridOutline() {
